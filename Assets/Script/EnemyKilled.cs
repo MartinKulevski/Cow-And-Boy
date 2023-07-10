@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 
 public class EnemyKilled : MonoBehaviour
 {
+
+    public GameObject bullet;
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,11 +24,11 @@ public class EnemyKilled : MonoBehaviour
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (other.tag == "Bullet")
+        if (collision.gameObject == bullet)
         {
-            Debug.Log("Hit!");
+            Destroy(bullet);
             Destroy(gameObject);
         }
     }
