@@ -46,6 +46,8 @@ public class Shoot2 : MonoBehaviour
                 Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
                 rb.AddForce(direction.normalized * projectileForce, ForceMode2D.Impulse);
 
+
+            
             }
         }
     }

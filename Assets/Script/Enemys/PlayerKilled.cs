@@ -6,8 +6,7 @@ public class PlayerKilled : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject Player;
-    
+    public GameObject player;
     
     
     void Start()
@@ -21,13 +20,11 @@ public class PlayerKilled : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        {
-            if (other.gameObject.tag == "Player")
-            {
-                Debug.Log("Dead");
-                Destroy(Player);
-            }
-        }
+   private void OnCollisionEnter2D(Collision2D collision)
+{
+    if (collision.gameObject.CompareTag("Enemy"))
+    {
+        Destroy(gameObject);
     }
+}
 }

@@ -11,12 +11,10 @@ GameObject:
   - component: {fileID: 6270474774154341801}
   - component: {fileID: 7901434742337378370}
   - component: {fileID: 8421841161967562667}
-  - component: {fileID: 4174652527556436211}
-  - component: {fileID: 4199769428607897286}
-  - component: {fileID: 3173417377922553472}
+  - component: {fileID: 2612979419871666086}
   m_Layer: 0
-  m_Name: EnemyBullet
-  m_TagString: Enemy
+  m_Name: BillysBullet
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +99,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.42585874, y: 0.0000006109476}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,9 +110,9 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.14828253, y: 0.97481287}
   m_EdgeRadius: 0
---- !u!50 &4174652527556436211
+--- !u!50 &2612979419871666086
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -135,30 +133,3 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
---- !u!114 &4199769428607897286
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4607061337209140499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 644d9b6daf5945e44ac9d83477af34fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 4055384235583746515, guid: 20dcbce3e86361848b16e0828dd333ed, type: 3}
-  speed: 6
---- !u!114 &3173417377922553472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4607061337209140499}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd0961963a6ecc44a9081d92a845237b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Player: {fileID: 4055384235583746515, guid: 20dcbce3e86361848b16e0828dd333ed, type: 3}

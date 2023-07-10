@@ -1,36 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Transactions;
 using UnityEngine;
 
-public class EnemyKilled : MonoBehaviour
+public class ShootPlayer : MonoBehaviour
 {
-
+    
     public GameObject bullet;
-
-
-
-
+    
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject == bullet)
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other.gameObject.CompareTag("Player"))
         {
-            Destroy(bullet);
-            Destroy(gameObject);
+            Instantiate(bullet, transform.position, Quaternion.identity);
         }
     }
 }
-

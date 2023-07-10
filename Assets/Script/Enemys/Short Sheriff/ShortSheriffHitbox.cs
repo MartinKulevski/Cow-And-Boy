@@ -6,8 +6,6 @@ using UnityEngine;
 public class ShortSheriffHitbox : MonoBehaviour
 {
 
-    public GameObject player;
-    public GameObject enemy;
     
     
     // Start is called before the first frame update
@@ -19,17 +17,12 @@ public class ShortSheriffHitbox : MonoBehaviour
     // Update is called once per frame
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == player)
+        if (collision.CompareTag("Player"))
         {
-            Debug.Log("Killed");
-            Destroy(enemy);
+            //When player touches the hitbox, the player will beocome destroyed. 
+            Destroy(transform.parent.gameObject);
         }
-    }
-
-    void Update()
-    {
-        
     }
 }
