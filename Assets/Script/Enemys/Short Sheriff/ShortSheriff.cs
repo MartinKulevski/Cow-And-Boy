@@ -34,7 +34,7 @@ public class ShortSheriff : MonoBehaviour
 
     private void Flip()
     {
-        //flips sprite depending on where its going
+        //flips sprite depending on where short sheriff is going
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
 }
