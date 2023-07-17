@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerKilled : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    public GameObject player;
     
     
     void Start()
@@ -24,7 +24,7 @@ public class PlayerKilled : MonoBehaviour
 {
     if (collision.gameObject.CompareTag("Enemy"))
     {
-        Destroy(gameObject);
+            SceneManager.LoadScene(1);
     }
 }
 }
