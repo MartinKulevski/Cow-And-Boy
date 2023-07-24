@@ -7,7 +7,7 @@ public class PlayerKilled : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    
+    public GameObject GameOver;
     
     void Start()
     {
@@ -24,7 +24,7 @@ public class PlayerKilled : MonoBehaviour
 {
     if (collision.gameObject.CompareTag("Enemy"))
     {
-            SceneManager.LoadScene(1);
+            gameObject.SetActive(GameOver);
     }
 }
 }
