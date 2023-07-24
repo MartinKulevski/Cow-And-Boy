@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Test
   - Bullet Refill
+  - Tumbleweed
   layers:
   - Default
   - TransparentFX
