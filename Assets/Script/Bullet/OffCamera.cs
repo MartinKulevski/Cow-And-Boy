@@ -8,7 +8,7 @@ public class OffCamera : MonoBehaviour
 {
     // Detects manually if obj is being seen by the main camera
 
-
+    public Collider2D col;
 
     GameObject obj;
     Collider2D objCollider;
@@ -22,9 +22,12 @@ public class OffCamera : MonoBehaviour
 
     void Start()
     {
+        col = GetComponent<Collider2D>();
         cam = Camera.main;
         planes = GeometryUtility.CalculateFrustumPlanes(cam);
         objCollider = GetComponent<Collider2D>();
+        col.enabled = false;
+        StartCoroutine(WaitToTurnOnCollider());
     }
 
 
@@ -41,5 +44,10 @@ public class OffCamera : MonoBehaviour
             Debug.Log("Nothing has been detected");
             Destroy(gameObject);
         }
+    }
+    IEnumerator WaitToTurnOnCollider()
+    {
+        yield return new WaitForSeconds(0.2f);
+        col.enabled = true;
     }
 }

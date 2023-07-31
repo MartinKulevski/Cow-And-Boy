@@ -38,6 +38,7 @@ public class Shoot2 : MonoBehaviour
 
                     // Spawn gameobject projectile on the player.
                     GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+
                     Destroy(projectile, 2);
 
                     // Rotates the projectile to face the shooting direction

@@ -8,6 +8,7 @@ public class BulletDown : MonoBehaviour
     public Text ammoText;
     public int ammoCount = 5;
     public GameObject gameOverScreen;
+    public GameObject BulletRefill;
 
     private void Start()
     {
@@ -42,6 +43,7 @@ public class BulletDown : MonoBehaviour
         {
             ammoCount+= 1;
             UpdateAmmoText();
+            Destroy(BulletRefill); 
         }
     }
 
