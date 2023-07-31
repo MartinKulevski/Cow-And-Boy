@@ -1,11 +1,13 @@
 using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class BulletDown : MonoBehaviour
 {
     public Text ammoText;
     public int ammoCount = 5;
-
+    public GameObject gameOverScreen;
 
     private void Start()
     {
@@ -21,7 +23,17 @@ public class BulletDown : MonoBehaviour
                 ammoCount--;
                 UpdateAmmoText();
             }
+            else
+            {
+                StartCoroutine(WaitForGameOverScreen());
+            }
         }
+    }
+
+    IEnumerator WaitForGameOverScreen()
+    {
+        yield return new WaitForSeconds(1.5f);
+        gameOverScreen.SetActive(true);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,4 +49,6 @@ public class BulletDown : MonoBehaviour
     {
         ammoText.text = "Ammo: " + ammoCount.ToString();
     }
+
+    
 }

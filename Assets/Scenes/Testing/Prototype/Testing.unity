@@ -459,6 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoText: {fileID: 2138706878}
   ammoCount: 5
+  gameOverScreen: {fileID: 11956502}
 --- !u!114 &712005652
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1484,16 +1485,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player NEW
       objectReference: {fileID: 0}
+    - target: {fileID: 1117650035871435918, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: bulletDown
+      value: 
+      objectReference: {fileID: 712005644}
+    - target: {fileID: 1949082086660679403, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: fsm.states.Array.data[3].position.x
+      value: 745.0469
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949082086660679403, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: fsm.states.Array.data[3].position.y
+      value: 231.80469
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949082086660679403, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: fsm.states.Array.data[3].isBreakpoint
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1949082086660679403, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
       propertyPath: fsm.states.Array.data[3].actionData.fsmGameObjectParams.Array.data[0].value
       value: 
       objectReference: {fileID: 15446760}
+    - target: {fileID: 2154092725932059390, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5651009605999078532, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5651009605999078532, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
       propertyPath: fsm.states.Array.data[1].actionData.fsmOwnerDefaultParams.Array.data[0].gameObject.value
       value: 
       objectReference: {fileID: 11956502}
     m_RemovedComponents:
     - {fileID: 238025744146448192, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+    - {fileID: 1949082086660679403, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
 --- !u!1 &1932795905
 GameObject:

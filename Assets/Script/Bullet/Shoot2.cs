@@ -6,7 +6,8 @@ public class Shoot2 : MonoBehaviour
 {
     public Camera mainCamera;                    
     public GameObject projectilePrefab;           
-    public float projectileForce = 10f;          
+    public float projectileForce = 10f;
+    public BulletDown bulletDown;
 
     //Notes :)
     //Mathf.Atan2 = Calculates the angle from a line. Essentially if the line was pointing up,
@@ -20,36 +21,44 @@ public class Shoot2 : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))    
+        if(bulletDown.ammoCount>0)
         {
-            // Raycast from camera to mouse position
-            Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 direction = mousePosition - (Vector2)transform.position;
-
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, Mathf.Infinity);
-
-            if (hit)
+            if (Input.GetMouseButtonDown(0))
             {
-                // Creates a cool line in the Scene view, to see where the bullet will shoot
-                Debug.DrawRay(transform.position, direction, Color.red, 1f);
+                // Raycast from camera to mouse position
+                Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 direction = mousePosition - (Vector2)transform.position;
 
-                // Spawn gameobject projectile on the player.
-                GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
-                Destroy(projectile, 2);
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, Mathf.Infinity);
 
-                // Rotates the projectile to face the shooting direction
-                
-                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-                projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+                if (hit)
+                {
+                    // Creates a cool line in the Scene view, to see where the bullet will shoot
+                    Debug.DrawRay(transform.position, direction, Color.red, 1f);
 
-                // Make bullet move forward
-                Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-                rb.AddForce(direction.normalized * projectileForce, ForceMode2D.Impulse);
+                    // Spawn gameobject projectile on the player.
+                    GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+                    Destroy(projectile, 2);
+
+                    // Rotates the projectile to face the shooting direction
+
+                    float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+                    projectile.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+                    // Make bullet move forward
+                    Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
+                    rb.AddForce(direction.normalized * projectileForce, ForceMode2D.Impulse);
 
 
-            
+
+                }
             }
         }
+        else
+        {
+            return;
+        }
+
     }
 }
 
