@@ -474,6 +474,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TargetFSMs: []
+--- !u!95 &712005661
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712005627}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 279aafc207af449b492e465c3e6c42bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &828639439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1502,14 +1522,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 238025744146448203, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 712005661}
     - target: {fileID: 238025744146448244, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: 02f889656a25a4d879e77a7e58ca7d4f, type: 2}
+    - target: {fileID: 238025744146448244, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 238025744146448245, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: m_Size.x
+      value: 1.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 238025744146448245, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: m_Size.y
+      value: 1.28
+      objectReference: {fileID: 0}
     - target: {fileID: 238025744146448245, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: fdc03616fd70c4f04bc95569505a598a, type: 3}
+    - target: {fileID: 238025744146448245, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 238025744146448246, guid: a52137037e4ea714f8c6e44bec8174b7, type: 3}
       propertyPath: m_Name
       value: Player NEW

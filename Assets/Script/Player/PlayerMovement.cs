@@ -11,12 +11,15 @@ public class PlayerMovement : MonoBehaviour
     public float Power = 10f;
     public bool canJump = true;
     private Rigidbody2D rb2d;
-
+    private SpriteRenderer spriterenderer;
+    public Animator animator; 
 
 
     private void Start()
     {
-        rb2d= GetComponent<Rigidbody2D>();
+        rb2d = GetComponent<Rigidbody2D>();
+        spriterenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>(); 
     }
 
 
@@ -36,20 +39,20 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.collider.CompareTag("Ground")) //If collision isnt touching ground, turn off booleans
         {
-            isGrounded= false;
+            isGrounded = false;
             canJump = false;
             print("Not Grounded");
         }
     }
 
     // Update is called once per frame
-    
-    
+
+
     void Jump() //where we store the Jump code
     {
         rb2d.AddForce(new Vector2(0f, Power), ForceMode2D.Impulse); //Jump script
     }
-    
+
     void Sprint() //Make player sprint
     {
         speed = 10f;
@@ -75,13 +78,24 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        horizontalInput =  Input.GetAxis("Horizontal");
-       
+        horizontalInput = Input.GetAxis("Horizontal");
+
+        if (horizontalInput != 0) //If horizontal input is lower then 0 
+        {
+            spriterenderer.flipX = horizontalInput < 0f; //flip sprite
+
+            animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        }
+
+        else
+        {
+            animator.SetFloat("Speed", 0f);
+        }
         //Controls
         transform.Translate(Vector2.right * speed * Time.deltaTime * horizontalInput); //Make player move left and right
-        if(isGrounded && canJump && Input.GetButtonDown("Jump")) //If all these equal true
+        if (isGrounded && canJump && Input.GetButtonDown("Jump")) //If all these equal true
         {
-           Jump(); //Make player Jump
+            Jump(); //Make player Jump
         }
     }
 }
