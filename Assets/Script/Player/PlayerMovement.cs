@@ -12,7 +12,8 @@ public class PlayerMovement : MonoBehaviour
     public bool canJump = true;
     private Rigidbody2D rb2d;
     private SpriteRenderer spriterenderer;
-    public Animator animator; 
+    public Animator animator;
+    private bool isJumping = false; 
 
 
     private void Start()
@@ -29,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
             canJump = true;
+            isJumping = false;
             print("Is Grounded");
         }
 
@@ -41,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = false;
             canJump = false;
+            isJumping = true; 
             print("Not Grounded");
         }
     }
@@ -51,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
     void Jump() //where we store the Jump code
     {
         rb2d.AddForce(new Vector2(0f, Power), ForceMode2D.Impulse); //Jump script
+        isJumping = true;
     }
 
     void Sprint() //Make player sprint
@@ -76,6 +80,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Walk();
         }
+
+        animator.SetBool("isJumping", isJumping);
 
 
         horizontalInput = Input.GetAxis("Horizontal");
