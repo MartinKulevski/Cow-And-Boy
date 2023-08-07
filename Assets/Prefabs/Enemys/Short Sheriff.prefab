@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5110074390150407205}
   - component: {fileID: 6637315874749302830}
   - component: {fileID: 5984069757519094965}
+  - component: {fileID: 1774169972201376785}
   m_Layer: 0
   m_Name: Short Sheriff
   m_TagString: Untagged
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0, g: 0.8937981, b: 1, a: 1}
+  m_Sprite: {fileID: -464067122, guid: 85b4a851261534ac98c71884eec7396d, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,6 +101,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   moveDuration: 3
+--- !u!95 &1774169972201376785
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181525447566812788}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 74f530c7200a5410bb6425e470b88853, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8028279499779422032
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,8 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 006d933af9096f34684a1d6082a8a280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  enemy: {fileID: 1181525447566812788}
 --- !u!61 &3205139552416621417
 BoxCollider2D:
   m_ObjectHideFlags: 0
