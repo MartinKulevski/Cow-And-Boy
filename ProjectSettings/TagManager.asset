@@ -12,6 +12,7 @@ TagManager:
   - Bullet Refill
   - Tumbleweed
   - Tumbleweed Wall
+  - Popup
   layers:
   - Default
   - TransparentFX
