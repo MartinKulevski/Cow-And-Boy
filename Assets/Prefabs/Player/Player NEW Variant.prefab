@@ -178,8 +178,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoText: {fileID: 0}
   ammoCount: 5
-  gameOverScreen: {fileID: 0}
-  BulletRefill: {fileID: 0}
+  gameOverScreen: {fileID: 6965944794558271636, guid: eb9e2ec7a400641ba8758bada0345c23, type: 3}
+  BulletRefill: {fileID: 8144630760421926993, guid: 32c9b64747bf8344baa43296a85b1fba, type: 3}
+  spriteRenderer: {fileID: 2992638452061784008, guid: ac6a73e8841aa426692592d58fcc3ed3, type: 3}
+  ammoUI:
+  - {fileID: -859547044, guid: 980cf99ed0e624172b70a2c84654e47f, type: 3}
+  - {fileID: 1895256927, guid: 980cf99ed0e624172b70a2c84654e47f, type: 3}
+  - {fileID: -1800838994, guid: 980cf99ed0e624172b70a2c84654e47f, type: 3}
+  - {fileID: 471810550, guid: 980cf99ed0e624172b70a2c84654e47f, type: 3}
+  - {fileID: -741015935, guid: 980cf99ed0e624172b70a2c84654e47f, type: 3}
+  - {fileID: 1564364027, guid: 980cf99ed0e624172b70a2c84654e47f, type: 3}
+  currentAmmoUI: 0
 --- !u!114 &712005652
 MonoBehaviour:
   m_ObjectHideFlags: 0

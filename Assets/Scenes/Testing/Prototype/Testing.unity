@@ -1989,6 +1989,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 238025744418420848}
+    - target: {fileID: 1918408265981222229, guid: bef1ec74ee16c7e49bef94f8bcd045d2, type: 3}
+      propertyPath: GameOver
+      value: 
+      objectReference: {fileID: 1979302095}
     - target: {fileID: 2135377414310140540, guid: bef1ec74ee16c7e49bef94f8bcd045d2, type: 3}
       propertyPath: animator
       value: 
