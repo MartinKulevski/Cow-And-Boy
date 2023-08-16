@@ -38,6 +38,7 @@ public class BulletDown : MonoBehaviour
     IEnumerator WaitForGameOverScreen()
     { 
         yield return new WaitForSeconds(1.5f);
+        
         gameOverScreen.SetActive(true);
     }
 
