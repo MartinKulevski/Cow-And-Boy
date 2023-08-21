@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6222109332773505282, guid: b72d279c2b689447b9b57ef3a15f4342, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6222109332773505282, guid: b72d279c2b689447b9b57ef3a15f4342, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8777,7 +8777,38 @@ Transform:
   m_Children:
   - {fileID: 1041728592}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1275936510
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1275936511}
+  m_Layer: 0
+  m_Name: MouseIsHere
+  m_TagString: Untagged
+  m_Icon: {fileID: 7250588514170254948, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1275936511
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275936510}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -6.629776, y: -1.3336823, z: 4.7038975}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1379864377
 GameObject:
@@ -8831,7 +8862,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1558210365 stripped
 MonoBehaviour:
@@ -8863,7 +8894,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2656401538929965958, guid: 5bdd49d405358df408da5cbd99303232, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2656401538929965958, guid: 5bdd49d405358df408da5cbd99303232, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9071,10 +9102,14 @@ PrefabInstance:
     - target: {fileID: 7293209049998677568, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
       propertyPath: m_Material
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6200000, guid: 02f889656a25a4d879e77a7e58ca7d4f, type: 2}
     - target: {fileID: 7293209049998677570, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
       propertyPath: m_Name
       value: Player NEW Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293209049998677570, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7293209049998677630, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
       propertyPath: m_RootOrder
@@ -9124,6 +9159,22 @@ PrefabInstance:
       propertyPath: orthographic
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7293209050133290087, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
+      propertyPath: m_FOVAxisMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8908069698013496266, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
+      propertyPath: fsm.states.Array.data[1].actionData.fsmStringParams.Array.data[2].value
+      value: Shoot3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: mousePositionVisual
+      value: 
+      objectReference: {fileID: 1275936510}
     - target: {fileID: 8908069698013496266, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
       propertyPath: fsm.states.Array.data[1].actionData.fsmGameObjectParams.Array.data[1].value
       value: 

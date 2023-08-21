@@ -8,7 +8,7 @@ public class OffCamera : MonoBehaviour
 {
     // Detects manually if obj is being seen by the main camera
 
-    public Collider2D col;
+    private Collider2D col;
 
     GameObject obj;
     Collider2D objCollider;

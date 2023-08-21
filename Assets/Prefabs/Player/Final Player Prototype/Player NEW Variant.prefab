@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7293209049998677569}
   - component: {fileID: 7293209049998677568}
   - component: {fileID: 7293209049998677571}
-  - component: {fileID: 7636342534192178618}
+  - component: {fileID: 8554859529348376474}
   - component: {fileID: 7293209049998677631}
   - component: {fileID: 2888890461170156976}
   - component: {fileID: 8908069698013496266}
@@ -163,7 +163,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.38, y: 1.31}
   m_Direction: 0
---- !u!114 &7636342534192178618
+--- !u!114 &8554859529348376474
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -172,13 +172,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7293209049998677570}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50efe6e4615ad614b8765e122a2c349a, type: 3}
+  m_Script: {fileID: 11500000, guid: 39728793cd64ce543b79ca1d4c646163, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainCamera: {fileID: 8681970071597589109, guid: 47bf7249940cd42c7a77da1ca0f34f5d, type: 3}
+  mainCamera: {fileID: 7293209050133290087}
   projectilePrefab: {fileID: 4607061337209140499, guid: 41f597f21cb8d8d4aba7496882ef8625, type: 3}
   projectileForce: 10
-  bulletDown: {fileID: 6506028939574935226}
+  bulletDownScript: {fileID: 6506028939574935226}
 --- !u!114 &7293209049998677631
 MonoBehaviour:
   m_ObjectHideFlags: 0

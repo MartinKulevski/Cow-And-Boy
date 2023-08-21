@@ -1,3 +1,4 @@
+using HutongGames.PlayMaker.Actions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class Shoot2 : MonoBehaviour
     public GameObject projectilePrefab;           
     public float projectileForce = 10f;
     public BulletDown bulletDown;
+
+    public GameObject mousePositionVisual;
 
     //Notes :)
     //Mathf.Atan2 = Calculates the angle from a line. Essentially if the line was pointing up,
@@ -21,18 +24,21 @@ public class Shoot2 : MonoBehaviour
 
     private void Update()
     {
-        if(bulletDown.ammoCount>0)
+
+
+        if (bulletDown.ammoCount>0)
         {
             if (Input.GetMouseButtonDown(0))
             {
                 // Raycast from camera to mouse position
                 Vector2 mousePosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
                 Vector2 direction = mousePosition - (Vector2)transform.position;
-
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, Mathf.Infinity);
 
+                Debug.DrawRay(transform.position, direction, Color.red, 100f);
                 if (hit)
                 {
+                    print(hit.collider.name);
                     // Creates a cool line in the Scene view, to see where the bullet will shoot
                     Debug.DrawRay(transform.position, direction, Color.red, 1f);
 
@@ -61,6 +67,7 @@ public class Shoot2 : MonoBehaviour
         }
 
     }
+
 }
 
 
