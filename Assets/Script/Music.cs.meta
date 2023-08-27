@@ -3,7 +3,10 @@ guid: 98a05aecb78d7d341913e0abf17f92ef
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - levelSong: {fileID: 8300000, guid: 525392455f2b7e746a6affd59ea8fb4e, type: 3}
+  - gameOverUI1: {fileID: 6965944794558271636, guid: abfa1f1929828124ea69dd2604c32683, type: 3}
+  - gameOverUI2: {fileID: 6965944794558271636, guid: eb9e2ec7a400641ba8758bada0345c23, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -7,6 +7,9 @@ public class BulletDown : MonoBehaviour
 {
     public Text ammoText;
     public int ammoCount = 5;
+
+    private Music musicScript; // Reference to the Music script
+
     public GameObject gameOverScreen;
     public GameObject BulletRefill;
 
@@ -14,9 +17,13 @@ public class BulletDown : MonoBehaviour
     public Sprite[] ammoUI;
     public int currentAmmoUI;
 
+
     private void Start()
     {
         ammoText.text = "Ammo: " + ammoCount;
+
+        // Find the Music script in the scene
+        
     }
 
     private void Update()
@@ -35,10 +42,10 @@ public class BulletDown : MonoBehaviour
         }
     }
 
-    IEnumerator WaitForGameOverScreen()
-    { 
+    private IEnumerator WaitForGameOverScreen()
+    {
         yield return new WaitForSeconds(1.5f);
-        
+
         gameOverScreen.SetActive(true);
     }
 
@@ -46,15 +53,14 @@ public class BulletDown : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bullet Refill"))
         {
-            ammoCount+= 1;
+            ammoCount += 1;
             UpdateAmmoText();
-            Destroy(BulletRefill); 
+            Destroy(BulletRefill);
         }
     }
 
     private void UpdateAmmoText()
     {
-        //ammoText.text = "Ammo: " + ammoCount.ToString();
         if(ammoCount == 5)
         {
             spriteRenderer.sprite = ammoUI[0];
@@ -80,6 +86,4 @@ public class BulletDown : MonoBehaviour
             spriteRenderer.sprite = ammoUI[5];
         }
     }
-
-    
 }

@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &32535679 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6965944794558271636, guid: eb9e2ec7a400641ba8758bada0345c23, type: 3}
-  m_PrefabInstance: {fileID: 2013797636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &83822136
 GameObject:
   m_ObjectHideFlags: 0
@@ -913,17 +908,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &646735079 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6965944794750699028, guid: eb9e2ec7a400641ba8758bada0345c23, type: 3}
-  m_PrefabInstance: {fileID: 2013797636}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &812943415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,13 +1260,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 6506028939574935226, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
-      propertyPath: gameOverScreen
-      value: 
-      objectReference: {fileID: 32535679}
-    - target: {fileID: 6506028939574935226, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
-      propertyPath: spriteRenderer
-      value: 
-      objectReference: {fileID: 646735079}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7293209049998677570, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
       propertyPath: m_Name
       value: Player NEW Variant
@@ -1346,6 +1326,10 @@ PrefabInstance:
     - target: {fileID: 7293209050133290087, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
       propertyPath: m_BackGroundColor.r
       value: 0.9622642
+      objectReference: {fileID: 0}
+    - target: {fileID: 8554859529348376474, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8908069698013496266, guid: bb8f8673b67eb4be7a4c560fca6edcfa, type: 3}
       propertyPath: m_Enabled

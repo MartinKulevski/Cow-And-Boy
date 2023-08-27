@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &32535679 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6965944794558271636, guid: eb9e2ec7a400641ba8758bada0345c23, type: 3}
-  m_PrefabInstance: {fileID: 2013797636}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &83822136
 GameObject:
   m_ObjectHideFlags: 0
@@ -43328,7 +43323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ammoText: {fileID: 0}
   ammoCount: 5
-  gameOverScreen: {fileID: 32535679}
+  gameOverScreen: {fileID: 0}
   BulletRefill: {fileID: 0}
   spriteRenderer: {fileID: 1580663804}
   ammoUI:
@@ -43505,6 +43500,7 @@ MonoBehaviour:
   Power: 15
   canJump: 0
   animator: {fileID: 6506028940320250682}
+  jumpAudioClip: {fileID: 0}
 --- !u!4 &7293209048325862383
 Transform:
   m_ObjectHideFlags: 0

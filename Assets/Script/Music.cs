@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
+using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class Music : MonoBehaviour
@@ -9,22 +7,10 @@ public class Music : MonoBehaviour
     public AudioClip levelSong;  // Reference to the level song audio clip
     private AudioSource audioSource;
 
-    private static Music instance;
+    private bool isPaused = false; // Flag to track if the audio is paused
 
     private void Awake()
     {
-        // Singleton pattern to ensure only one instance of GameManager exists
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = levelSong;
         audioSource.loop = true;
@@ -42,7 +28,7 @@ public class Music : MonoBehaviour
         if (scene.name.StartsWith("Stage"))
         {
             // Continue playing the level song if it's not already playing
-            if (!audioSource.isPlaying)
+            if (!audioSource.isPlaying && !isPaused)
             {
                 audioSource.Play();
             }
@@ -50,7 +36,18 @@ public class Music : MonoBehaviour
         else
         {
             // Pause or stop audio for other scenes if needed
-            audioSource.Stop();
+            audioSource.Pause();
+            isPaused = true;
+        }
+    }
+
+    public void ResumeAudio()
+    {
+        // Resume audio playback
+        if (!audioSource.isPlaying && isPaused)
+        {
+            audioSource.Play();
+            isPaused = false;
         }
     }
 }
