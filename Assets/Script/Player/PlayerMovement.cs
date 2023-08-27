@@ -15,13 +15,21 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     private bool isJumping = false; 
 
+    public AudioClip jumpAudioClip;  // Reference to the jump audio clip
+    private AudioSource audioSource;  // Reference to the AudioSource component
+
 
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         spriterenderer = GetComponent<SpriteRenderer>();
-        animator = GetComponent<Animator>(); 
+        animator = GetComponent<Animator>();
+
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.clip = jumpAudioClip;
     }
+
 
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,10 +59,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
 
 
-    void Jump() //where we store the Jump code
+    void Jump()
     {
-        rb2d.AddForce(new Vector2(0f, Power), ForceMode2D.Impulse); //Jump script
+        rb2d.AddForce(new Vector2(0f, Power), ForceMode2D.Impulse);
         isJumping = true;
+
+        // Play the jump audio
+        audioSource.Play();
     }
 
     void Sprint() //Make player sprint

@@ -4,38 +4,42 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public GameObject player; 
+    public string playerTag = "Player"; // Tag of the GameObject to follow
     public float speed = 10f;
+    public float followDuration = 2f; // Duration in seconds to follow the player
+    private Transform playerTransform;
     private Rigidbody2D rb;
-    // Start is called before the first frame update
-    void Start()
+    private float lifeTimer; // Timer to track bullet's active duration
+
+    private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        playerTransform = GameObject.FindGameObjectWithTag(playerTag).transform;
+        lifeTimer = followDuration;
     }
 
-    // Update is called once per frame
-    void Update()
-    {       
-        //Move bullet towards player
-        Vector3 direction = player.transform.position - transform.position; //Gets player direction
-        rb.velocity = direction.normalized * speed; //Moves the bullet torwards the players direction 
+    private void FixedUpdate()
+    {
+        if (playerTransform != null)
+        {
+            Vector3 direction = playerTransform.position - transform.position;
+            rb.velocity = direction.normalized * speed;
 
-        //Rotate bullet towards player
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg; //Gets angle between player and bullet and converts it to degrees
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward); //Makes the rotation happen with the player
-        Destroy(gameObject, 2f); //Destroy gameobject after 2 seconds.
-        
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            // Update the timer and destroy the bullet if the timer expires
+            lifeTimer -= Time.fixedDeltaTime;
+            if (lifeTimer <= 0f)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Bullet"))
-        {
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-        }
-
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Bullet") || collision.gameObject.CompareTag(playerTag))
         {
             Destroy(gameObject);
             Destroy(collision.gameObject);
